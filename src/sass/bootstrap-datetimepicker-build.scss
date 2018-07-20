@@ -1,5 +1,7 @@
 // Import bootstrap variables including default color palette and fonts
-//@import "../../node_modules/bootstrap/less/variables.less";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
 
 .sr-only {
   position: absolute;
