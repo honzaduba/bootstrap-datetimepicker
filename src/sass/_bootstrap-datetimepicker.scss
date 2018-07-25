@@ -167,9 +167,9 @@ $bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
             border-radius: $bs-datetimepicker-border-radius;
         }
         & th {
-            height: 20px;
-            line-height: 20px;
-            width: 20px;
+            height: 2me;
+            line-height: 2me;
+            width: 3em;
             &.picker-switch {
                 width: 145px;
             }

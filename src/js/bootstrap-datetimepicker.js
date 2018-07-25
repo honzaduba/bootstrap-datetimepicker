@@ -193,41 +193,57 @@
 
             getDatePickerTemplate = function () {
                 var headTemplate = $('<thead>')
-                        .append($('<tr>')
-                            .append($('<th>').addClass('prev').attr('data-action', 'previous')
-                                .append($('<span>').addClass(options.icons.previous))
+                    .append($('<tr>')
+                        .append(
+                            $('<th>')
+                                .addClass('prev')
+                                .attr('data-action', 'previous')
+                                .append(
+                                    $('<i>').addClass(options.icons.previous)
                                 )
-                            .append($('<th>').addClass('picker-switch').attr('data-action', 'pickerSwitch').attr('colspan', (options.calendarWeeks ? '6' : '5')))
-                            .append($('<th>').addClass('next').attr('data-action', 'next')
-                                .append($('<span>').addClass(options.icons.next))
+                        )
+                        .append(
+                            $('<th>')
+                                .addClass('picker-switch')
+                                .attr('data-toggle', 'collapse')
+                                .attr('data-target', 'pickerSwitch')
+                                .attr('data-action', 'pickerSwitch')
+                                .attr('colspan', (options.calendarWeeks ? '6' : '5')))
+                        .append(
+                            $('<th>')
+                                .addClass('next')
+                                .attr('data-action', 'next')
+                                .append(
+                                    $('<i>').addClass(options.icons.next)
                                 )
-                            ),
+                        )
+                    ),
                     contTemplate = $('<tbody>')
                         .append($('<tr>')
                             .append($('<td>').attr('colspan', (options.calendarWeeks ? '8' : '7')))
-                            );
+                        );
 
                 return [
                     $('<div>').addClass('datepicker-days')
-                        .append($('<table>').addClass('table-condensed')
+                        .append($('<table>').addClass('table-sm table-borderless')
                             .append(headTemplate)
                             .append($('<tbody>'))
-                            ),
+                        ),
                     $('<div>').addClass('datepicker-months')
-                        .append($('<table>').addClass('table-condensed')
+                        .append($('<table>').addClass('table-sm table-borderless')
                             .append(headTemplate.clone())
                             .append(contTemplate.clone())
-                            ),
+                        ),
                     $('<div>').addClass('datepicker-years')
-                        .append($('<table>').addClass('table-condensed')
+                        .append($('<table>').addClass('table-sm table-borderless')
                             .append(headTemplate.clone())
                             .append(contTemplate.clone())
-                            ),
+                        ),
                     $('<div>').addClass('datepicker-decades')
-                        .append($('<table>').addClass('table-condensed')
+                        .append($('<table>').addClass('table-sm table-borderless')
                             .append(headTemplate.clone())
                             .append(contTemplate.clone())
-                            )
+                        )
                 ];
             },
 
@@ -238,11 +254,11 @@
 
                 if (isEnabled('h')) {
                     topRow.append($('<td>')
-                        .append($('<a>').attr({ href: '#', tabindex: '-1', 'title': options.tooltips.incrementHour }).addClass('btn').attr('data-action', 'incrementHours').append($('<span>').addClass(options.icons.up))));
+                        .append($('<a>').attr({ href: '#', tabindex: '-1', 'title': options.tooltips.incrementHour }).addClass('btn').attr('data-action', 'incrementHours').append($('<i>').addClass(options.icons.up))));
                     middleRow.append($('<td>')
                         .append($('<span>').addClass('timepicker-hour').attr({ 'data-time-component': 'hours', 'title': options.tooltips.pickHour }).attr('data-action', 'showHours')));
                     bottomRow.append($('<td>')
-                        .append($('<a>').attr({ href: '#', tabindex: '-1', 'title': options.tooltips.decrementHour }).addClass('btn').attr('data-action', 'decrementHours').append($('<span>').addClass(options.icons.down))));
+                        .append($('<a>').attr({ href: '#', tabindex: '-1', 'title': options.tooltips.decrementHour }).addClass('btn').attr('data-action', 'decrementHours').append($('<i>').addClass(options.icons.down))));
                 }
                 if (isEnabled('m')) {
                     if (isEnabled('h')) {
@@ -252,12 +268,12 @@
                     }
                     topRow.append($('<td>')
                         .append($('<a>').attr({ href: '#', tabindex: '-1', 'title': options.tooltips.incrementMinute }).addClass('btn').attr('data-action', 'incrementMinutes')
-                            .append($('<span>').addClass(options.icons.up))));
+                            .append($('<i>').addClass(options.icons.up))));
                     middleRow.append($('<td>')
                         .append($('<span>').addClass('timepicker-minute').attr({ 'data-time-component': 'minutes', 'title': options.tooltips.pickMinute }).attr('data-action', 'showMinutes')));
                     bottomRow.append($('<td>')
                         .append($('<a>').attr({ href: '#', tabindex: '-1', 'title': options.tooltips.decrementMinute }).addClass('btn').attr('data-action', 'decrementMinutes')
-                            .append($('<span>').addClass(options.icons.down))));
+                            .append($('<i>').addClass(options.icons.down))));
                 }
                 if (isEnabled('s')) {
                     if (isEnabled('m')) {
@@ -267,12 +283,12 @@
                     }
                     topRow.append($('<td>')
                         .append($('<a>').attr({ href: '#', tabindex: '-1', 'title': options.tooltips.incrementSecond }).addClass('btn').attr('data-action', 'incrementSeconds')
-                            .append($('<span>').addClass(options.icons.up))));
+                            .append($('<i>').addClass(options.icons.up))));
                     middleRow.append($('<td>')
                         .append($('<span>').addClass('timepicker-second').attr({ 'data-time-component': 'seconds', 'title': options.tooltips.pickSecond }).attr('data-action', 'showSeconds')));
                     bottomRow.append($('<td>')
                         .append($('<a>').attr({ href: '#', tabindex: '-1', 'title': options.tooltips.decrementSecond }).addClass('btn').attr('data-action', 'decrementSeconds')
-                            .append($('<span>').addClass(options.icons.down))));
+                            .append($('<i>').addClass(options.icons.down))));
                 }
 
                 if (!use24Hours) {
@@ -283,17 +299,17 @@
                 }
 
                 return $('<div>').addClass('timepicker-picker')
-                    .append($('<table>').addClass('table-condensed')
+                    .append($('<table>').addClass('table-sm table-borderless')
                         .append([topRow, middleRow, bottomRow]));
             },
 
             getTimePickerTemplate = function () {
                 var hoursView = $('<div>').addClass('timepicker-hours')
-                        .append($('<table>').addClass('table-condensed')),
+                    .append($('<table>').addClass('table-sm table-borderless')),
                     minutesView = $('<div>').addClass('timepicker-minutes')
-                        .append($('<table>').addClass('table-condensed')),
+                        .append($('<table>').addClass('table-sm table-borderless')),
                     secondsView = $('<div>').addClass('timepicker-seconds')
-                        .append($('<table>').addClass('table-condensed')),
+                        .append($('<table>').addClass('table-sm table-borderless')),
                     ret = [getTimePickerMainTemplate()];
 
                 if (isEnabled('h')) {
@@ -312,18 +328,37 @@
             getToolbar = function () {
                 var row = [];
                 if (options.showTodayButton) {
-                    row.push($('<td>').append($('<a>').attr({ 'data-action': 'today', 'title': options.tooltips.today }).append($('<span>').addClass(options.icons.today))));
+                    row.push(
+                        $('<td>')
+                            .append(
+                                $('<a>')
+                                    .attr({ 'data-action': 'today', 'title': options.tooltips.today })
+                                    .append(
+                                        $('<i>')
+                                            .addClass(options.icons.today)
+                                    )
+                            )
+                    );
                 }
                 if (!options.sideBySide && hasDate() && hasTime()) {
-                    row.push($('<td>').append($('<a>').attr({ 'data-action': 'togglePicker', 'title': options.tooltips.selectTime }).append($('<span>').addClass(options.icons.time))));
+                    row.push(
+                        $('<td>')
+                            .append(
+                                $('<a>')
+                                    .attr({ 'data-action': 'togglePicker', 'title': options.tooltips.selectTime })
+                                    .append(
+                                        $('<i>').addClass(options.icons.time)
+                                    )
+                            )
+                    );
                 }
                 if (options.showClear) {
-                    row.push($('<td>').append($('<a>').attr({ 'data-action': 'clear', 'title': options.tooltips.clear }).append($('<span>').addClass(options.icons.clear))));
+                    row.push($('<td>').append($('<a>').attr({ 'data-action': 'clear', 'title': options.tooltips.clear }).append($('<i>').addClass(options.icons.clear))));
                 }
                 if (options.showClose) {
-                    row.push($('<td>').append($('<a>').attr({ 'data-action': 'close', 'title': options.tooltips.close }).append($('<span>').addClass(options.icons.close))));
+                    row.push($('<td>').append($('<a>').attr({ 'data-action': 'close', 'title': options.tooltips.close }).append($('<i>').addClass(options.icons.close))));
                 }
-                return $('<table>').addClass('table-condensed').append($('<tbody>').append($('<tr>').append(row)));
+                return $('<table>').addClass('table-sm table-borderless').append($('<tbody>').append($('<tr>').append(row)));
             },
 
             getTemplate = function () {
@@ -365,7 +400,7 @@
                     content.append(toolbar);
                 }
                 if (hasDate()) {
-                    content.append($('<li>').addClass((options.collapse && hasTime() ? 'collapse in' : '')).append(dateView));
+                    content.append($('<li>').addClass((options.collapse && hasTime() ? 'collapse show' : '')).append(dateView));
                 }
                 if (options.toolbarPlacement === 'default') {
                     content.append(toolbar);
@@ -1100,8 +1135,8 @@
                 togglePicker: function (e) {
                     var $this = $(e.target),
                         $parent = $this.closest('ul'),
-                        expanded = $parent.find('.in'),
-                        closed = $parent.find('.collapse:not(.in)'),
+                        expanded = $parent.find('.show'),
+                        closed = $parent.find('.collapse:not(.show)'),
                         collapseData;
 
                     if (expanded && expanded.length) {
@@ -1113,8 +1148,8 @@
                             expanded.collapse('hide');
                             closed.collapse('show');
                         } else { // otherwise just toggle in class on the two views
-                            expanded.removeClass('in');
-                            closed.addClass('in');
+                            expanded.removeClass('show');
+                            closed.addClass('show');
                         }
                         if ($this.is('span')) {
                             $this.toggleClass(options.icons.time + ' ' + options.icons.date);
@@ -2340,9 +2375,9 @@
         }
 
         if (element.hasClass('input-group')) {
-            // in case there is more then one 'input-group-addon' Issue #48
+            // in case there is more then one 'input-group-append' Issue #48
             if (element.find('.datepickerbutton').length === 0) {
-                component = element.find('.input-group-addon');
+                component = element.find('.input-group-append');
             } else {
                 component = element.find('.datepickerbutton');
             }
@@ -2460,15 +2495,15 @@
         disabledDates: false,
         enabledDates: false,
         icons: {
-            time: 'glyphicon glyphicon-time',
-            date: 'glyphicon glyphicon-calendar',
-            up: 'glyphicon glyphicon-chevron-up',
-            down: 'glyphicon glyphicon-chevron-down',
-            previous: 'glyphicon glyphicon-chevron-left',
-            next: 'glyphicon glyphicon-chevron-right',
-            today: 'glyphicon glyphicon-screenshot',
-            clear: 'glyphicon glyphicon-trash',
-            close: 'glyphicon glyphicon-remove'
+            time: 'fa fa-clock-o',
+            date: 'fa fa-calendar',
+            up: 'fa fa-chevron-up',
+            down: 'fa fa-chevron-down',
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'fa fa-dot-circle-o',
+            clear: 'fa fa-trash-o',
+            close: 'fa fa-remove'
         },
         tooltips: {
             today: 'Go to today',
