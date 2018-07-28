@@ -1,7 +1,10 @@
 {
     "author": {
-        "name": "Honza Duba"
+        "name": "Jonathan Peterson"
     },
+    "contributors": [
+        "Honza Duba"
+    ],
     "bugs": {
         "url": "https://github.com/honzduba/bootstrap-datetimepicker/issues"
     },
@@ -28,7 +31,7 @@
         "postcss-cli": "^6.0.0",
         "uglify-js": "^3.4.5"
     },
-    "homepage": "http://eonasdan.github.io/bootstrap-datetimepicker/",
+    "homepage": "https://github.com/honzduba/bootstrap-datetimepicker/",
     "keywords": [
         "twitter-bootstrap",
         "bootstrap",
@@ -42,9 +45,9 @@
     "name": "bootstrap-datetimepicker",
     "repository": {
         "type": "git",
-        "url": "https://github.com/eonasdan/bootstrap-datetimepicker.git"
+        "url": "https://github.com/honzduba/bootstrap-datetimepicker/"
     },
-    "version": "4.18.1",
+    "version": "4.18.2",
     "private": true,
     "scripts": {
         "css": "npm-run-all --parallel css-main",
