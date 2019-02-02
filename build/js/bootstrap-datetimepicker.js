@@ -2495,14 +2495,14 @@
         disabledDates: false,
         enabledDates: false,
         icons: {
-            time: 'fa fa-clock-o',
+            time: 'fa fa-clock',
             date: 'fa fa-calendar',
             up: 'fa fa-chevron-up',
             down: 'fa fa-chevron-down',
             previous: 'fa fa-chevron-left',
             next: 'fa fa-chevron-right',
-            today: 'fa fa-dot-circle-o',
-            clear: 'fa fa-trash-o',
+            today: 'fa fa-calendar-day',
+            clear: 'fa fa-trash',
             close: 'fa fa-remove'
         },
         tooltips: {
