@@ -2495,15 +2495,15 @@
         disabledDates: false,
         enabledDates: false,
         icons: {
-            time: 'fas fa-clock',
-            date: 'fas fa-calendar',
-            up: 'fas fa-chevron-up',
-            down: 'fas fa-chevron-down',
-            previous: 'fas fa-chevron-left',
-            next: 'fas fa-chevron-right',
-            today: 'fas fa-calendar-day',
-            clear: 'fas fa-trash',
-            close: 'fas fa-remove'
+            time: 'far fa-clock',
+            date: 'far fa-calendar',
+            up: 'far fa-chevron-up',
+            down: 'far fa-chevron-down',
+            previous: 'far fa-chevron-left',
+            next: 'far fa-chevron-right',
+            today: 'far fa-calendar-day',
+            clear: 'far fa-trash',
+            close: 'far fa-remove'
         },
         tooltips: {
             today: 'Go to today',
